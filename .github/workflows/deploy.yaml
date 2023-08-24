@@ -28,7 +28,6 @@ jobs:
           sed -i 's#"homepage": "."#"homepage": "https://${{github.actor}}.github.io/${{github.event.repository.name}}"#g' package.json
           npm install
           CI=false && npm run build
-          echo "APP ID ${{secrets.REACT_APP_FIREBASE_APP_ID}}"
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4 
