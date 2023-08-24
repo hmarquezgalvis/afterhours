@@ -5,7 +5,7 @@ import { Layout, StyledHeader, Content } from "components/Header"
 import {Logo} from 'components/Logo'
 import Marquee from "components/Marquee"
 import { Menu, TopFrame, TopFrameBlock, TopFrameContainer, TopFrameLabel } from "components/Nav"
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import ProductVideo from "./ProductVideo"
 import ProductIntro from "./ProductIntro"
 import ProductDetails from "./ProductDetails"
@@ -18,6 +18,7 @@ import Footer from "components/Footer"
 import Contact from "components/Contact"
 import { Modal } from "antd"
 import ConfirmModal from "components/ConfirmDialog"
+import ReactGA from 'react-ga';
 
 
 export default function Home<T extends React.PropsWithChildren<{}>>(props: T){
@@ -29,7 +30,12 @@ export default function Home<T extends React.PropsWithChildren<{}>>(props: T){
     const [ contactUsOpen, setContactUsOpen ] = useState(false)
     const [ confirmOpen, setConfirmOpen ] = useState(false)
 
-    const scrollToView = (elementId: string) => {
+    const scrollToView = (elementId: string, label: string) => {
+        ReactGA.event({
+            category: 'Top-Navigation',
+            action: 'Button_Click',
+            label
+        });
         document.getElementById(elementId)?.scrollIntoView({ behavior: 'smooth' })
     }
 
@@ -37,32 +43,32 @@ export default function Home<T extends React.PropsWithChildren<{}>>(props: T){
         {
             key: 1,
             label: 'Product',
-            onClick: (ev: any) => scrollToView('product-description')
+            onClick: (ev: any) => scrollToView('product-description', 'Product')
         },
         {
             key: 2,
             label: 'Did you know?',
-            onClick: (ev: any) => scrollToView('did-you-know')
+            onClick: (ev: any) => scrollToView('did-you-know', 'Did you know?')
         },
         {
             key: 3,
             label: 'Benefits',
-            onClick: (ev: any) => scrollToView('product-container')
+            onClick: (ev: any) => scrollToView('product-container', 'Benefits')
         },
         {
             key: 4,
             label: 'Comparison',
-            onClick: (ev: any) => scrollToView('comparison')
+            onClick: (ev: any) => scrollToView('comparison', 'Comparison')
         },
         {
             key: 5,
             label: 'FAQs',
-            onClick: (ev: any) => scrollToView('faq')
+            onClick: (ev: any) => scrollToView('faq', 'FAQs')
         },
         {
             key: 6,
             label: 'Reviews',
-            onClick: (ev: any) => scrollToView('review')
+            onClick: (ev: any) => scrollToView('review', 'Reviews')
         },                        
     ];
 
@@ -90,7 +96,20 @@ export default function Home<T extends React.PropsWithChildren<{}>>(props: T){
         if(openConfirm){
             setConfirmOpen(true)
         }       
-    }        
+    }
+
+    const openModal = (section: string, label: string) => {
+        setContactUsOpen(true);
+        ReactGA.event({
+            category: section,
+            action: 'Button_Click',
+            label
+        });
+    }
+    
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
+    }, []);
     
     return (
         <Layout>
@@ -127,15 +146,15 @@ export default function Home<T extends React.PropsWithChildren<{}>>(props: T){
                 />
             </StyledHeader>
             <Content>
-                <ProductIntro openModal={setContactUsOpen} slideContainerRef={slideContainerRef} />
+                <ProductIntro openModal={() => openModal('Product_Intro', 'Try Now')} slideContainerRef={slideContainerRef} />
                 <ProductVideo slideContainerRef={slideContainerRef} />
-                <ProductDetails openModal={setContactUsOpen} /> 
+                <ProductDetails openModal={() => openModal('Product_Details', 'Shop Now')} /> 
                 <BannerAdvertisement src="img/banner1-large.png" />
-                <FAQ openModal={setContactUsOpen} />
+                <FAQ openModal={() => openModal('FAQ', 'Shop Now')} />
                 <Reviews />
-                <Testimonies openModal={setContactUsOpen} />
+                <Testimonies openModal={() => openModal('Testimonies', 'Shop Now')} />
                 <Contact />
-                <Footer openModal={setContactUsOpen} />
+                <Footer openModal={() => openModal('Footer', 'Shop Now')} />
             </Content>
         </Layout>
     )

@@ -5,6 +5,7 @@ import Typography from "components/Typography";
 import React, { useEffect, useRef, useState } from "react";
 import { userService } from "services";
 import styled from "styled-components";
+import ReactGA from 'react-ga';
 
 const Modal = styled(AntdModal)`
     border-radius: 30px;
@@ -207,6 +208,11 @@ export default function ContactUs({ open, close }: React.PropsWithChildren<{ ope
             try{
                 setDisabledButton(true)
                 await userService.saveUser(userEmail)
+                ReactGA.event({
+                    category: 'Notification Modal',
+                    action: 'Button_Click',
+                    label: 'Notify Me',
+                });
             }catch(ex){
                 hasAPIError = true
             }finally {

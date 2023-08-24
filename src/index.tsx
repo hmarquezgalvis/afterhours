@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
+import ReactGA from 'react-ga'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+ReactGA.initialize('G-HDN4XQ2QFK');
+
 root.render(
   <React.StrictMode>
     <HashRouter>
