@@ -62,7 +62,7 @@ const Video = styled(Col)`
   // display: flex;
   // align-self: baseline;
 
-  @media(max-width: )
+  // @media(max-width: )
 `
 
 const VideoDescription = styled(Col)`
@@ -104,12 +104,12 @@ const VideoDescriptionContainer = styled.div`
 `
 
 const VideoDescriptionItem = styled.div<{ $description?: boolean, $icon?: boolean }>`    
-    ${ props => props.$description ?
+    ${ (props: any) => props.$description ?
       `
       display: grid;
       grid-gap: 13.54px;        
       ` : '' }
-    ${ props => props.$icon ?
+    ${ (props: any) => props.$icon ?
       `
       display: inline-flex;
       // flex-direction: column;
