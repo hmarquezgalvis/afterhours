@@ -60,7 +60,7 @@ Follow these steps to get started with Google Cloud Firestore:
    - Create a new database and configure the security rules. Use the following [security rule](https://firebase.google.com/docs/firestore/security/get-started) as an example:
 
    ```sh
-   match /users/{documents=*} {
+   match /users/{document=*} {
        allow read, write: if true;
    }
 6. **Create an .env file in the project root directory and set the environment variables:**
