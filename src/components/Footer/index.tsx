@@ -31,6 +31,10 @@ const FooterBanner = styled.div`
     background: url('img/banner-afterhours-footer.png') top center no-repeat;
     margin: 0 auto;
     background-color: var(--cream);
+
+    @media(max-width: 480px) {
+        min-height: 250px;
+    }
 `
 
 const FooterHero = styled.div`
@@ -196,7 +200,7 @@ const FooterContainer = styled.div`
             margin-inline-end: 0px;
         }
         button {
-            margin-top: 6px;
+            margin-top: 15px;
             padding: 15px 8px 15px 8px;
         }
 
@@ -239,7 +243,7 @@ const FooterContainer = styled.div`
             font-size: 15px;            
         }
         button {
-            margin-top: 5px;
+            margin-top: 15px;
             padding: 20px 16px 20px 10px;
         }
     }
@@ -264,7 +268,7 @@ const FooterContainer = styled.div`
             font-size: 15px;
         }
         button {
-            margin-top: 5px;
+            margin-top: 15px;
             padding: 24px 16px 24px 8px;
         }
     }
@@ -286,7 +290,7 @@ const FooterContainer = styled.div`
             font-size: 20px;
         }
         button {
-            margin-top: 5px;
+            margin-top: 25px;
             padding: 24px 16px 24px 8px;
         }
     }    
@@ -305,7 +309,7 @@ const FooterContainer = styled.div`
             font-size: 20px;
         }
         button {
-            margin-top: 5px;
+            margin-top: 25px;
             // padding: 24px 16px 24px 8px;
         }
     }
