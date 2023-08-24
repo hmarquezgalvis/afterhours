@@ -113,7 +113,7 @@ export default function TweetSlide(props: React.PropsWithChildren){
                 <ReviewDescription>
                     <ReviewInfo>
                         <Review>
-                            { Array.from({ length: stars!! }).map((value,index) => (<Star key={index} />)) }                                 
+                            { Array.from({ length: stars!! }).map((value,index) => (<Star key={index} />)) }
                         </Review>
                         <LastReview date={date} />
                     </ReviewInfo>

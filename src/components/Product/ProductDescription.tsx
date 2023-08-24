@@ -284,7 +284,7 @@ export default function ProductDescription({ children, openModal }: React.PropsW
             children: (
                 <>
                     <ProductInformationDescription>
-                        Peel the patches from their protective liner,place on each eye and gently tap around the eye area to create a vacuum like seal. Return to tin for storage after each use. 
+                        Peel the patches from their protective liner, place on each eye and gently tap around the eye area to create a vacuum like seal. Return to tin for storage after each use. 
                         Wash the patches with light soap and water. For best results, let air dry sticky side up.
                     </ProductInformationDescription>
                 </>

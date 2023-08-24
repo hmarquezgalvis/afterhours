@@ -40,8 +40,7 @@ export const REVIEWS = [
         `
     },
     {
-        name: 'Laura B.',
-        socia: '@bermu_u',
+        name: 'Rachel B.',
         isVerified: true,
         stars: 5,
         date: new Date(now.getFullYear(),now.getMonth(), now.getDate() - 2).getTime(),

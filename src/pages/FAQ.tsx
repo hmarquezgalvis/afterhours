@@ -529,10 +529,15 @@ const FAQTexts = [
 
 export default function FAQ({ openModal }: React.PropsWithChildren<{ openModal: any }>){
  
-    const productProps = ['Strap free','100% Light Blocking','Stays in place','Conforms to your face'];
+    const productProps = [
+        'Strap free',
+        '100% light blocking',
+        'Stays in place',
+        'Conforms to your face'
+    ];
 
     const otherCons = [
-        'Uncomfortable Straps',
+        'Uncomfortable straps',
         'Light seeps in',
         'Slips around',
         'One-size uneven fit'

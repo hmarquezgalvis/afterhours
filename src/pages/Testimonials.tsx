@@ -176,7 +176,7 @@ export default function Testimonies({ openModal }: React.PropsWithChildren<{ ope
                             <ReviewDescription>
                                 <ReviewInfo>
                                     <Review>
-                                        { Array.from({ length:  REVIEWS?.[index]?.stars || 0 }).map((value,index) => (<Star key={index} />)) }                                 
+                                        { Array.from({ length:  REVIEWS?.[index]?.stars || 0 }).map((value,index) => (<Star key={index} />)) }
                                     </Review>
                                     <LastReview date={ REVIEWS?.[index]?.date || 0} />
                                 </ReviewInfo>

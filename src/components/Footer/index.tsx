@@ -196,7 +196,7 @@ const FooterContainer = styled.div`
             margin-inline-end: 0px;
         }
         button {
-            margin-top: 1px;
+            margin-top: 6px;
             padding: 15px 8px 15px 8px;
         }
 

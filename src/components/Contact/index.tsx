@@ -72,7 +72,9 @@ export default function Contact(props: React.PropsWithChildren){
                 <SlideContainer>
                     <Slide>
                         <>
-                            <Typography className="contacts" fontSize="16px" lineheight="20px" letterSpacing="0px" $textTransform="uppercase">Free shipping on 2+ mask (USA only)</Typography>            
+                            <Typography className="contacts" fontSize="16px" lineheight="20px" letterSpacing="0px" $textTransform="uppercase">
+                                Free shipping on 2+ masks (USA only)
+                            </Typography>            
                             <Icon src="icons/eyelash-blue.svg"  />
                         </>
                     </Slide>
