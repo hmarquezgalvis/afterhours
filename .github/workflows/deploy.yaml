@@ -25,7 +25,7 @@ jobs:
           REACT_APP_FIREBASE_APP_ID: ${{secrets.REACT_APP_FIREBASE_APP_ID}}
           REACT_APP_SECRET_KEY: ${{secrets.REACT_APP_SECRET_KEY}}
         run: |
-          sed -i 's#"homepage": "."#"homepage": "https://${{github.actor}}.github.io/${{github.event.repository.name}}"#g' package.json
+          sed -i 's#"homepage": "."#"homepage": "https://useafterhours.com"#g' package.json
           npm install
           CI=false && npm run build
 
